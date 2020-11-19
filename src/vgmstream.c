@@ -1631,3 +1631,24 @@ int vgmstream_is_virtual_filename(const char* filename) {
      * and their STREAMFILEs should be modified as to ignore null FILEs and report size 0. */
     return strcmp(&filename[len-5], ".txtp") == 0;
 }
+
+/* Changes for Sm5shMusic */
+int32_t get_vgmstream_samplerate(VGMSTREAM* vgmstream) {
+    return vgmstream->sample_rate;
+}
+
+int get_vgmstream_channel_number(VGMSTREAM* vgmstream) {
+    return vgmstream->channels;
+}
+
+int32_t get_vgmstream_loop_startsample(VGMSTREAM* vgmstream) {
+    return vgmstream->loop_start_sample;
+}
+
+int32_t get_vgmstream_loop_endsample(VGMSTREAM* vgmstream) {
+    return vgmstream->loop_end_sample;
+}
+
+int32_t get_vgmstream_totalsamples(VGMSTREAM* vgmstream) {
+    return vgmstream->num_samples;
+}
